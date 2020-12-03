@@ -10,8 +10,6 @@ Command: This behavioral design pattern which is useful to abstract business log
 
 Observer: Where an object maintains a list of its dependants, called observers, and notifies them of any state changes.
 
-Visitor: Used when we have to perform an operation on a group of similar kind of Objects.
-
 Composite: The composite pattern describes a group of objects that are treated the same way as a single instance of the same type of object. 
 
 Strategy: With this pattern we create objects which represent various strategies and a context object whose behavior varies as per its strategy object. The strategy object changes the executing algorithm of the context object.
