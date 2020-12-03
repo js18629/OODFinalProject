@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.uab.listeners.Observer;
-//import com.uab.model.visitor.SpellCheckingVisitor;
 import com.uab.model.visitor.Visitor;
 import com.uab.view.TextPanel;
 
@@ -129,10 +128,6 @@ public abstract class Glyph implements Serializable {
 	public void deActivateHasCursor() {
 
 	}
-
-//	public void setSpellCheckVisitor(SpellCheckingVisitor visitor) {
-//
-//	}
 
 	public Glyph getDecoratedGlyph() {
 		throw new UnsupportedOperationException();

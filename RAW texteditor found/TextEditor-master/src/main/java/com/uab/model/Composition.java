@@ -8,9 +8,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.uab.model.strategies.Compositor;
-//import com.uab.model.visitor.SpellCheckingVisitor;
 import com.uab.model.visitor.Visitor;
-//import com.uab.model.visitor.spellcheckers.JazzySpellChecker;
 
 @XmlRootElement
 public class Composition extends Glyph {
@@ -23,8 +21,6 @@ public class Composition extends Glyph {
 	private Column formattedDocument;
 
 	private Caret cursor;
-
-	//private SpellCheckingVisitor visitor;
 
 	public Composition() {
 
@@ -39,10 +35,6 @@ public class Composition extends Glyph {
 	public Caret getCursor() {
 		return cursor;
 	}
-
-//	public void setSpellCheckVisitor(SpellCheckingVisitor visitor) {
-//		this.visitor = visitor;
-//	}
 
 	public void setCursor(Caret cursor) {
 		this.cursor = cursor;
@@ -115,11 +107,6 @@ public class Composition extends Glyph {
 		g.setColor(Color.WHITE);
 		g.fillRect(startX, startY, width, height);
 		g.setColor(Color.BLACK);
-//		if (visitor != null) {
-//			visitor.clearList();
-//			performVisit(visitor);
-//			visitor.markMissSpelledWords();
-//		}
 		format(width, height);
 		formattedDocument.draw(g, position, width, height);
 	}

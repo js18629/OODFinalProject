@@ -8,9 +8,6 @@ import com.uab.model.visitor.Visitor;
 
 public class CharacterModel extends Glyph {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private char character;
 	private Rect bounds;
@@ -35,8 +32,6 @@ public class CharacterModel extends Glyph {
 				position.getY());
 
 		FontMetrics fm = g.getFontMetrics();
-		// bounds = new Rect(position.getX(), position.getY(),
-		// fm.charWidth(this.character), fm.getHeight());
 		bounds = new Rect(position.getX(), position.getY() - getHeigth(), 10,
 				20);
 		position.incrementXBy(getWidth());

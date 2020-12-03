@@ -67,8 +67,6 @@ public class ImageModel extends Glyph {
 				g.fillRect(bounds.getLeft() + bounds.getWidth() - 3,
 						bounds.getBottom(), 2, bounds.getHeight());
 		}
-		// g.drawRect(bounds.getLeft(), bounds.getBottom(), bounds.getWidth(),
-		// bounds.getHeight());
 	}
 
 	@Override

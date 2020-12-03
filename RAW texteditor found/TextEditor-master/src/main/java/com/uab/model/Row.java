@@ -47,7 +47,6 @@ public class Row extends Glyph {
 
 	@Override
 	public Glyph parent() {
-		// TODO Auto-generated method stub
 		return super.parent();
 	}
 
@@ -64,8 +63,6 @@ public class Row extends Glyph {
 
 		bounds.setExtent(new Point(getWidth(), getHeigth()));
 		System.out.println("Row bounds" + getBounds());
-		// g.drawRect(bounds.getLeft(), bounds.getBottom(), bounds.getWidth(),
-		// bounds.getHeight());
 	}
 
 	@Override

@@ -22,8 +22,7 @@ public class Column extends Glyph {
 	@Override
 	public void add(Glyph glyph) {
 		rows.add(glyph);
-		// notifyObservers();
-
+		notifyObservers();
 	}
 
 	@Override
@@ -35,7 +34,7 @@ public class Column extends Glyph {
 	@Override
 	public void remove(Glyph glyph) {
 		rows.remove(glyph);
-		// notifyObservers();
+		notifyObservers();
 	}
 
 	@Override
@@ -61,9 +60,6 @@ public class Column extends Glyph {
 
 		bounds.setBottom(position.getY() - getHeigth() - 2 * lineSpacing);
 		bounds.setExtent(new Point(getWidth(), getHeigth()));
-
-		// g.drawRect(bounds.getLeft(), bounds.getBottom(), bounds.getWidth(),
-		// bounds.getHeight());
 	}
 
 	@Override

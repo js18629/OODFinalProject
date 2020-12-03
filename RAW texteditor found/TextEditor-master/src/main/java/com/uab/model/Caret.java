@@ -68,7 +68,7 @@ public class Caret {
 							this.rowIndex = i;
 							this.columnIndex = j;
 							System.out.println("Row is " + this.rowIndex
-									+ "  and colIndex iis " + this.columnIndex);
+									+ " and colIndex is " + this.columnIndex);
 							break;
 						}
 
@@ -103,7 +103,7 @@ public class Caret {
 			}
 			glyphIndex += this.columnIndex;
 
-			System.out.println("Glyph id =" + glyphIndex);
+			System.out.println("Glyph id = " + glyphIndex);
 		}
 	}
 
@@ -137,8 +137,6 @@ public class Caret {
 						this.glyphIndex);
 
 				lastGlyph.activateHasCursor(true);
-			} else {
-				// draw the initial cursor
 			}
 
 		}
@@ -147,7 +145,6 @@ public class Caret {
 					this.glyphIndex - 1);
 			if (lastGlyph != null) {
 				lastGlyph.activateHasCursor(false);
-
 			}
 		}
 	}

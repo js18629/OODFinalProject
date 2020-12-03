@@ -6,7 +6,6 @@ import java.util.List;
 import com.uab.model.Caret;
 import com.uab.model.Glyph;
 import com.uab.model.Point;
-//import com.uab.model.visitor.SpellCheckingVisitor;
 import com.uab.view.TextPanel;
 
 public class Decorator extends Glyph {
@@ -17,10 +16,6 @@ public class Decorator extends Glyph {
 	public Glyph getDecoratedGlyph() {
 		return this.component;
 	}
-
-//	public void setSpellCheckVisitor(SpellCheckingVisitor visitor) {
-//		this.component.setSpellCheckVisitor(visitor);
-//	}
 
 	@Override
 	public void draw(Graphics g, Point position, int width, int height) {

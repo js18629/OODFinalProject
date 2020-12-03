@@ -44,9 +44,6 @@ public class TextPanel extends JPanel implements Observer, MouseListener {
 	private JMenu edit;
 	private JMenu preferences;
 
-	//remove?
-	private JMenu help;
-
 	// File menu items
 	private JMenuItem newFile;
 	private JMenuItem openFile;
@@ -86,7 +83,7 @@ public class TextPanel extends JPanel implements Observer, MouseListener {
 	}
 
 	public void createView() {
-		frame = new JFrame("Text Editor");
+		frame = new JFrame("Notepad --");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		creatControls();
 		this.setFocusable(true);
@@ -204,21 +201,7 @@ public class TextPanel extends JPanel implements Observer, MouseListener {
 
 		});
 
-		// preferences bar (remove spell check + dictionary functionality?)
 		preferences = new JMenu("Preferences");
-//		spellCheck = new JCheckBoxMenuItem("Spell Check");
-//		spellCheck.addActionListener(new ActionListener() {
-
-//			public void actionPerformed(ActionEvent e) {
-//				if (spellCheck.isSelected()) {
-//					controller.enableSpellCheck();
-//				} else {
-//					controller.disableSpellCheck();
-//				}
-//			}
-//		});
-
-		// preferences.add(spellCheck);
 
 		border = new JCheckBoxMenuItem("Border");
 		border.addActionListener(new ActionListener() {
@@ -266,26 +249,6 @@ public class TextPanel extends JPanel implements Observer, MouseListener {
 		file.setMnemonic('F'); // Create shortcut
 		edit.setMnemonic('E');
 
-		//shortcuts
-		newFile.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N,
-				ActionEvent.CTRL_MASK));
-		openFile.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O,
-				ActionEvent.CTRL_MASK));
-		saveFile.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,
-				ActionEvent.CTRL_MASK));
-
-		redo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Y,
-				ActionEvent.CTRL_MASK));
-		undo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z,
-				ActionEvent.CTRL_MASK));
-		cut.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X,
-				ActionEvent.CTRL_MASK));
-		copy.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C,
-				ActionEvent.CTRL_MASK));
-		paste.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V,
-				ActionEvent.CTRL_MASK));
-
-		// adds options to menu bar + menubar on frame
 		menubar.add(file);
 		menubar.add(edit);
 		menubar.add(preferences);
@@ -293,7 +256,6 @@ public class TextPanel extends JPanel implements Observer, MouseListener {
 
 	}
 
-	// not exactly sure but DO NOT remove
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		int width = frame.getWidth();
@@ -319,55 +281,8 @@ public class TextPanel extends JPanel implements Observer, MouseListener {
 		// WHEN A KEY IS PRESSED SENDS STUFF TO CONSOLE
 		public void keyPressed(KeyEvent e) {
 
-			// ctrl-i shortcut
-			if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_I) {
-				JFileChooser chooser = new JFileChooser();
-
-				// for image selection on ctrl-i importing image
-				FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & GIF Images", "jpg", "jpeg", "gif",
-						"png");
-				chooser.setFileFilter(filter);
-				int returnVal = chooser.showOpenDialog(frame);
-				if (returnVal == JFileChooser.APPROVE_OPTION) {
-
-					// selects image and reads it
-					File imageFile = chooser.getSelectedFile();
-					BufferedImage img = null;
-					try {
-						img = ImageIO.read(imageFile);
-						ImageModel p = new ImageModel(img, chooser.getSelectedFile().getAbsolutePath());
-						controller.insert(p, glyph.getCursor().getGlyphIndex());
-					} catch (IOException exception) {
-						System.out.println("No file found");
-					}
-
-				}
-
-				// shortcut ctrl-z undo / ctrl-y redo / delete does what backspace should
-			} else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_Z) {
-				controller.undo();
-			} else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_Y) {
-				controller.redo();
-			} else if (e.getKeyCode() == KeyEvent.VK_DELETE) {
-				controller.delete(glyph.getCursor().getGlyphIndex());
-			}
-
-			// Attempts to use arrow up and down for scrolling but doesn't work well
-//			else if (e.getKeyCode() == KeyEvent.VK_UP) {
-//				System.out.println("UPPP");
-//				controller.scrollUp();
-//			} else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-//				System.out.println("Down");
-//				controller.scrollDown();
-
-			// } an arrow for some reason?
-			else if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_A) {
-				ArrowModel arrow = new ArrowModel();
-				controller.insert(arrow, glyph.getCursor().getGlyphIndex());
-			}
-
 			// Writes the characters in the text editor
-			else if (!e.isControlDown() && !e.isAltDown()) {
+			if (!e.isControlDown() && !e.isAltDown()) {
 				System.out.println(e.getKeyChar() + "   callled ");
 				CharacterModel c = new CharacterModel(e.getKeyChar());
 				System.out.println(glyph.getCursor().getGlyphIndex());
@@ -384,9 +299,7 @@ public class TextPanel extends JPanel implements Observer, MouseListener {
 
 	// MOUSE CLICK WILL GIVE LOCATION IN CONSOLE
 	public void mouseClicked(MouseEvent e) {
-		// System.out.println("Point x" + e.getX() + "Point y" + e.getY());
-		// controller.locateGlyph(new Point(e.getX(), e.getY()));
-
+		
 	}
 
 	public void mousePressed(MouseEvent e) {

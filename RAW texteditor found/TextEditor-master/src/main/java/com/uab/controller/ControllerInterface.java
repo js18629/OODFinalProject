@@ -45,9 +45,4 @@ public interface ControllerInterface {
 	public void removeBorder();
 
 	public void removeScrollBar();
-
-//	public void enableSpellCheck();
-//
-//	public void disableSpellCheck();
-
 }

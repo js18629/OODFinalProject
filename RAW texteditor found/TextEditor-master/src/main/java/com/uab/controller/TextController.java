@@ -79,7 +79,7 @@ public class TextController implements ControllerInterface {
 		cmdInvoker.redo();
 
 	}
-
+	
 	public void cut() {
 		// TODO Auto-generated method stub
 
@@ -148,19 +148,4 @@ public class TextController implements ControllerInterface {
 		view.setGlyph(document);
 		view.update();
 	}
-
-//	public void disableSpellCheck() {
-//		this.document.setSpellCheckVisitor(null);
-//		view.setGlyph(document);
-//		view.update();
-//
-//	}
-
-//	public void enableSpellCheck() {
-//		System.out.println("Called here");
-//		this.document.setSpellCheckVisitor(visitor);
-//		view.setGlyph(document);
-//		view.update();
-//	}
-
 }
