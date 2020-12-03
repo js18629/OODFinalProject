@@ -8,13 +8,13 @@ We are creating a better version of notepad ++
 Pattern Descriptions
 Command: This behavioral design pattern which is useful to abstract business logic into discrete actions which we normally call commands. This command object helps in loose coupling between two classes where one class (invoker) calls a method on another class (receiver) to perform an operation.
 
-Facade: The ConnectionManager facade handles socket connection initialization and object stream configuration subsystems with simplified instruction sets.
+Observer: Where an object maintains a list of its dependants, called observers, and notifies them of any state changes.
 
-Factory: With the Factory Pattern, we create objects without exposing the creation logic to the client and refer to newly created objects using a common interface.
+Visitor: Used when we have to perform an operation on a group of similar kind of Objects.
 
-Observer?
+Composite: The composite pattern describes a group of objects that are treated the same way as a single instance of the same type of object. 
 
-Adaptor: The adapter pattern converts the user interface of a class into another interface clients expect. Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.
+Strategy: With this pattern we create objects which represent various strategies and a context object whose behavior varies as per its strategy object. The strategy object changes the executing algorithm of the context object.
 
 
 The Process
